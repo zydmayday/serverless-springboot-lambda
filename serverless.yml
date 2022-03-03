@@ -6,7 +6,8 @@ provider:
   runtime: java11
   timeout: 30
 package:
-  artifact: target/demo-0.0.1-SNAPSHOT.jar
+  artifact: target/demo-0.0.2-SNAPSHOT.jar
 functions:
   hello:
-    handler: com.example.demo.hanlder.HelloHandler
+    handler: com.example.demo.handler.hello.HelloHandler
+    memorySize: 256

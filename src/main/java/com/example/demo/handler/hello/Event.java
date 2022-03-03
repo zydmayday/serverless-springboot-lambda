@@ -1,4 +1,4 @@
-package com.example.demo.hanlder;
+package com.example.demo.handler.hello;
 
 import lombok.Data;
 

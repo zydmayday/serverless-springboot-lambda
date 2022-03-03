@@ -1,4 +1,4 @@
-package com.example.demo.hanlder;
+package com.example.demo.handler.hello;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
