@@ -12,7 +12,6 @@
     <artifactId>hello</artifactId>
 
     <dependencies>
-
         <dependency>
             <groupId>com.zydmayday</groupId>
             <artifactId>common</artifactId>
