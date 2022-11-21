@@ -11,15 +11,19 @@ provider:
   timeout: 30
 
 package:
-  artifact: target/demo-0.0.2-SNAPSHOT.jar
+  individually: true
 
 functions:
   hello:
     handler: com.example.demo.handler.hello.HelloHandler
     memorySize: 128
+    package:
+      artifact: hello/target/hello-0.0.2-SNAPSHOT.jar
   csv:
-    handler: com.example.demo.handler.csv.CsvHandler
+    handler: com.zydmayday.demo.handler.csv.CsvHandler
     memorySize: 512
+    package:
+      artifact: csv/target/csv-0.0.2-SNAPSHOT.jar
     events:
       - s3:
           bucket: ${self:custom.csvBucket}
