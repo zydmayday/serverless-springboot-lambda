@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+import static com.zydmayday.demo.common.CommonUtils.getName;
+
 @Component
 public class CsvHandler extends AbstractHandler implements RequestHandler<Event, String> {
 
@@ -17,7 +19,7 @@ public class CsvHandler extends AbstractHandler implements RequestHandler<Event,
         try {
             return csvService.process(event.getRuleName(), context.getLogger());
         } catch (IOException e) {
-            context.getLogger().log("Failed" + e.getMessage());
+            context.getLogger().log(getName() + "Failed" + e.getMessage());
             return "Failed";
         }
     }

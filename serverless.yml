@@ -13,12 +13,20 @@ provider:
 package:
   individually: true
 
+layers:
+  common:
+    package:
+      artifact: common/target/common-0.0.2-SNAPSHOT.zip
+    retain: false
+
 functions:
   hello:
-    handler: com.example.demo.handler.hello.HelloHandler
+    handler: com.zydmayday.demo.handler.hello.HelloHandler
     memorySize: 128
     package:
       artifact: hello/target/hello-0.0.2-SNAPSHOT.jar
+    layers:
+      - !Ref CommonLambdaLayer
   csv:
     handler: com.zydmayday.demo.handler.csv.CsvHandler
     memorySize: 512
